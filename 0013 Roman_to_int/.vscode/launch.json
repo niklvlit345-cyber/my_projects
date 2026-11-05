@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/nikita/Рабочий стол/LeetCode/my_projects/0002_add_two_numbers",
-      "program": "/home/nikita/Рабочий стол/LeetCode/my_projects/0002_add_two_numbers/2",
+      "cwd": "/home/nikita/Рабочий стол/LeetCode/my_projects/0013 Roman_to_int",
+      "program": "/home/nikita/Рабочий стол/LeetCode/my_projects/0013 Roman_to_int/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
