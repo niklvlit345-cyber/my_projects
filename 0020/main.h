@@ -9,10 +9,10 @@ public:
     bool isValid(string s) {
         int n = s.length();
         if (n % 2 == 1){
-            return false;
+            return false; // такая проверка экономит память и время
         }
         
-        vector<char> deq;
+        vector<char> deq; // будет что-то по типу очереди deque - последним зашёл - первым вышел
 
         for (char x : s){
             if (x == '(' or x == '[' or x == '{'){
@@ -37,6 +37,7 @@ public:
             }
         }
 
+        // если вектор check не пустой, очевидно что не нашлось пары для некоторых скобок
         int check = deq.size();
         if (check > 0){
             return false;
