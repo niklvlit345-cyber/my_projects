@@ -15,13 +15,19 @@ struct ListNode {
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        ListNode* res_list;
+        ListNode* res_list = new ListNode();
         ListNode* result = res_list;
+        if (list1 == nullptr){
+            return list2;
+        }
+        if (list2 == nullptr){
+            return list1;
+        }
         ListNode* list1_next = list1->next;
         ListNode* list2_next = list2->next;
 
 
-        while (list1->next != nullptr and list2->next != nullptr){
+        while (list1 != nullptr and list2 != nullptr){
             int value1 = list1->val;
             int value2 = list2->val;
 
@@ -33,33 +39,35 @@ public:
                 res_list->val = value1;
                 list1 = list1_next;
             }
-
-            ListNode* next_res = res_list->next;
-            res_list = next_res;
-
-            ListNode* list1_next = list1->next;
-            ListNode* list2_next = list2->next;
+            res_list->next = new ListNode;
+            res_list = res_list->next;
+            list1_next = list1->next;
+            list2_next = list2->next;
         }
 
-        while (list1->next != nullptr){
+        while (list1 != nullptr){
             int value1 = list1->val;
             res_list->val = value1;
-            ListNode* list1_next = list1->next;
+            list1_next = list1->next;
             list1 = list1_next;
 
-            ListNode* next_res = res_list->next;
-            res_list = next_res;
+            res_list->next = new ListNode();
+            res_list = res_list->next;
+
         }
 
-        while (list2->next != nullptr){
+        while (list2 != nullptr){
             int value2 = list2->val;
             res_list->val = value2;
-            ListNode* list2_next = list2->next;
+            list2_next = list2->next;
             list2 = list2_next;
 
-            ListNode* next_res = res_list->next;
-            res_list = next_res;
+            res_list->next = new ListNode();
+            res_list = res_list->next;
+
         }
+
+        res_list->next = nullptr;
         return result;
     }
 };
