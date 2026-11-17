@@ -14,6 +14,10 @@ int main(){
 
     print_listnode(res1);
 
+    delete l1;
+    delete l2;
+    delete res1;
+
     return 0;
 
 }
